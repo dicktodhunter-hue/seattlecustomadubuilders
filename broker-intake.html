@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Builder Profile Setup | Seattle ADU Builders</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green: #1c3a2a;
+    --amber: #c8902a;
+    --warm-white: #f7f4ef;
+    --sage: #5a6b5e;
+    --linen: #e8e4df;
+    --amber-light: #d9a040;
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color: var(--green); min-height: 100vh; }
+
+  /* PASSWORD GATE */
+  #password-gate {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--green);
+    padding: 2rem;
+  }
+  .gate-card {
+    background: var(--warm-white);
+    border-radius: 12px;
+    padding: 3rem;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+  }
+  .gate-logo { font-size: 15px; font-weight: 600; color: var(--sage); margin-bottom: 2rem; }
+  .gate-title { font-size: 24px; font-weight: 600; color: var(--green); margin-bottom: 0.5rem; }
+  .gate-sub { font-size: 14px; color: var(--sage); margin-bottom: 2rem; line-height: 1.6; }
+  .gate-input { width: 100%; padding: 12px 16px; border: 1px solid var(--linen); border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 15px; color: var(--green); background: #fff; outline: none; margin-bottom: 12px; text-align: center; letter-spacing: 0.1em; }
+  .gate-input:focus { border-color: var(--amber); }
+  .gate-btn { width: 100%; background: var(--green); color: #fff; border: none; padding: 14px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; transition: background 0.2s; }
+  .gate-btn:hover { background: #2a5240; }
+  .gate-error { font-size: 13px; color: #c0392b; margin-top: 10px; display: none; }
+
+  /* MAIN CONTENT */
+  #main-content { display: none; }
+
+  /* NAV */
+  nav { background: var(--green); padding: 0 2.5rem; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+  .nav-logo { color: #fff; font-size: 16px; font-weight: 600; }
+  .nav-tag { font-size: 12px; color: rgba(255,255,255,0.5); }
+
+  /* HERO */
+  .page-hero { padding: 4rem 2.5rem 2rem; max-width: 900px; margin: 0 auto; }
+  .tag { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; display: block; }
+  h1 { font-size: 32px; font-weight: 600; color: var(--green); margin-bottom: 1rem; line-height: 1.3; }
+  .hero-sub { font-size: 16px; color: var(--sage); line-height: 1.75; max-width: 620px; }
+
+  /* TABS */
+  .tabs { max-width: 900px; margin: 2rem auto 0; padding: 0 2.5rem; display: flex; gap: 8px; border-bottom: 2px solid var(--linen); }
+  .tab { padding: 10px 20px; font-size: 14px; font-weight: 500; color: var(--sage); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all 0.2s; background: none; border-top: none; border-left: none; border-right: none; font-family: 'DM Sans', sans-serif; }
+  .tab.active { color: var(--green); border-bottom-color: var(--amber); }
+  .tab:hover { color: var(--green); }
+
+  /* TAB CONTENT */
+  .tab-content { display: none; max-width: 900px; margin: 0 auto; padding: 2.5rem; }
+  .tab-content.active { display: block; }
+
+  /* EXAMPLE CARD */
+  .example-card { background: #fff; border: 2px solid var(--amber); border-radius: 12px; padding: 2.5rem; margin-bottom: 2rem; }
+  .example-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--amber); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px; }
+  .example-label::after { content: '— This is what your completed page will look like'; font-weight: 400; color: var(--sage); text-transform: none; letter-spacing: 0; }
+  .builder-preview { display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: start; }
+  .builder-logo-preview { width: 100px; height: 100px; background: var(--green); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; font-weight: 600; text-align: center; padding: 8px; }
+  .builder-info-preview h3 { font-size: 22px; font-weight: 600; color: var(--green); margin-bottom: 6px; }
+  .builder-info-preview .license { font-size: 12px; color: var(--sage); margin-bottom: 12px; }
+  .builder-info-preview .desc { font-size: 14px; color: var(--sage); line-height: 1.7; margin-bottom: 16px; max-width: 480px; }
+  .builder-contact { display: flex; flex-wrap: wrap; gap: 12px; }
+  .contact-pill { display: flex; align-items: center; gap: 6px; background: var(--warm-white); border: 1px solid var(--linen); border-radius: 20px; padding: 6px 14px; font-size: 13px; color: var(--green); font-weight: 500; }
+  .cta-preview { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--linen); }
+  .cta-preview-btn { display: inline-block; background: var(--amber); color: #fff; padding: 12px 24px; border-radius: 6px; font-size: 14px; font-weight: 500; text-decoration: none; }
+  .service-area { font-size: 12px; color: var(--sage); margin-top: 8px; }
+
+  /* FORM */
+  .form-section { margin-bottom: 2.5rem; }
+  .form-section-title { font-size: 16px; font-weight: 600; color: var(--green); margin-bottom: 1.25rem; padding-bottom: 8px; border-bottom: 1px solid var(--linen); }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group.full { grid-column: 1 / -1; }
+  label { font-size: 13px; font-weight: 500; color: var(--green); }
+  .label-hint { font-size: 11px; color: var(--sage); font-weight: 400; margin-left: 6px; }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="url"],
+  textarea,
+  select { padding: 11px 14px; border: 1px solid var(--linen); border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--green); background: #fff; outline: none; transition: border 0.2s; width: 100%; }
+  input:focus, textarea:focus, select:focus { border-color: var(--amber); }
+  textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
+  .char-count { font-size: 11px; color: var(--sage); text-align: right; margin-top: 4px; }
+
+  /* FILE UPLOAD */
+  .file-upload { border: 2px dashed var(--linen); border-radius: 8px; padding: 2rem; text-align: center; cursor: pointer; transition: border-color 0.2s; background: #fff; }
+  .file-upload:hover { border-color: var(--amber); }
+  .file-upload input { display: none; }
+  .file-upload-icon { font-size: 32px; margin-bottom: 8px; display: block; }
+  .file-upload-text { font-size: 14px; color: var(--sage); }
+  .file-upload-hint { font-size: 12px; color: var(--sage); opacity: 0.7; margin-top: 4px; }
+  .file-preview { display: none; margin-top: 12px; }
+  .file-preview img { max-width: 120px; max-height: 120px; border-radius: 6px; border: 1px solid var(--linen); }
+
+  /* AUTH SECTION */
+  .auth-box { background: #fff; border: 1px solid var(--linen); border-radius: 8px; padding: 1.5rem; }
+  .auth-box p { font-size: 13px; color: var(--sage); line-height: 1.7; margin-bottom: 1rem; }
+  .auth-check { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+  .auth-check input[type="checkbox"] { margin-top: 3px; width: 16px; height: 16px; flex-shrink: 0; accent-color: var(--green); }
+  .auth-check label { font-size: 13px; color: var(--green); line-height: 1.6; cursor: pointer; }
+
+  /* SUBMIT */
+  .submit-section { text-align: center; padding: 2rem; background: var(--green); border-radius: 10px; }
+  .submit-section h3 { font-size: 20px; font-weight: 600; color: #fff; margin-bottom: 0.5rem; }
+  .submit-section p { font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .submit-btn { background: var(--amber); color: #fff; border: none; padding: 16px 40px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; cursor: pointer; transition: background 0.2s; }
+  .submit-btn:hover { background: var(--amber-light); }
+  .submit-note { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 12px; }
+
+  /* SUCCESS */
+  #success-msg { display: none; text-align: center; padding: 3rem; }
+  #success-msg h2 { font-size: 28px; font-weight: 600; color: var(--green); margin-bottom: 1rem; }
+  #success-msg p { font-size: 16px; color: var(--sage); line-height: 1.7; }
+
+  /* INFO BOX */
+  .info-box { background: #fff; border: 1px solid var(--linen); border-left: 4px solid var(--amber); border-radius: 6px; padding: 1.25rem; margin-bottom: 1.5rem; }
+  .info-box p { font-size: 14px; color: var(--sage); line-height: 1.7; }
+  .info-box strong { color: var(--green); }
+
+  @media (max-width: 768px) {
+    .page-hero { padding: 2rem 1.5rem 1rem; }
+    .tabs { padding: 0 1.5rem; }
+    .tab-content { padding: 2rem 1.5rem; }
+    .form-grid { grid-template-columns: 1fr; }
+    .builder-preview { grid-template-columns: 1fr; }
+    h1 { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PASSWORD GATE -->
+<div id="password-gate">
+  <div class="gate-card">
+    <div class="gate-logo">Seattle ADU Builders — Partner Portal</div>
+    <h2 class="gate-title">Builder Profile Setup</h2>
+    <p class="gate-sub">This page is for authorized Seattle ADU Builder partners only. Please enter your access code to continue.</p>
+    <input type="password" class="gate-input" id="password-input" placeholder="Enter access code" onkeypress="if(event.key==='Enter') checkPassword()">
+    <button class="gate-btn" onclick="checkPassword()">Access Portal</button>
+    <p class="gate-error" id="gate-error">Incorrect access code. Please contact your TMS representative.</p>
+    <p style="font-size:12px; color:var(--sage); margin-top:1.5rem;">Need access? Contact Today's Marketing Strategies LLC</p>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main-content">
+
+  <nav>
+    <div class="nav-logo">Seattle ADU Builders — Partner Portal</div>
+    <div class="nav-tag">Builder Profile Setup</div>
+  </nav>
+
+  <div class="page-hero">
+    <span class="tag">Authorized Partners Only — Builder Profile Setup</span>
+    <h1>Let's set up your builder profile page.</h1>
+    <p class="hero-sub">Your completed profile appears on page 2 of every copy of the Seattle ADU Planning Guide distributed in your geo territory. Fill out the form below — we handle the rest.</p>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('example', this)">See Example First</button>
+    <button class="tab" onclick="showTab('form', this)">Submit Your Profile</button>
+  </div>
+
+  <!-- EXAMPLE TAB -->
+  <div class="tab-content active" id="tab-example">
+
+    <div class="info-box">
+      <p><strong>How your page works:</strong> The example below shows a completed builder profile page. This exact layout appears on page 2 of the ebook — the first thing every prospect reads after the cover. Your logo, description, contact info, and call to action all appear here. Every detail is yours to customize.</p>
+    </div>
+
+    <div class="example-card">
+      <div class="example-label">Completed Example</div>
+      <div class="builder-preview">
+        <div class="builder-logo-preview">PACIFIC<br>ADU<br>BUILDERS<br>LOGO</div>
+        <div class="builder-info-preview">
+          <h3>Pacific ADU Builders</h3>
+          <div class="license">WA License #PACIFAB123 · Fully Insured · King County Specialist</div>
+          <div class="desc">We've been building backyard cottages, DADUs, and ADUs across Seattle and King County since 2018. Our team handles everything — feasibility, design, permits, and construction — so you never have to chase down multiple contractors. Most of our projects are move-in ready within 9 months of your first call.</div>
+          <div class="builder-contact">
+            <div class="contact-pill">📞 206-555-0123</div>
+            <div class="contact-pill">🌐 pacificadubuilders.com</div>
+            <div class="contact-pill">📧 hello@pacificadubuilders.com</div>
+          </div>
+          <div class="cta-preview">
+            <a href="#" class="cta-preview-btn">Book Your Free Feasibility Review →</a>
+            <div class="service-area">Serving Seattle · Bellevue · Kirkland · Redmond · All of King County</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:1rem;">
+      <button class="submit-btn" onclick="showTab('form', this)" style="background:var(--green);">Ready — Submit My Profile →</button>
+    </div>
+
+  </div>
+
+  <!-- FORM TAB -->
+  <div class="tab-content" id="tab-form">
+
+    <div class="info-box">
+      <p><strong>What happens next:</strong> Submit your profile below. We'll build your custom page and send you a preview within 2 business days. Once approved, your page goes into every ebook distributed in your geo territory. Updates can be requested anytime by resubmitting this form.</p>
+    </div>
+
+    <form id="builder-form" netlify name="builder-profile">
+      <input type="hidden" name="form-name" value="builder-profile">
+
+      <!-- COMPANY INFO -->
+      <div class="form-section">
+        <div class="form-section-title">Company Information</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Company Name <span class="label-hint">*required</span></label>
+            <input type="text" name="company-name" placeholder="Pacific ADU Builders" required>
+          </div>
+          <div class="form-group">
+            <label>Washington State License # <span class="label-hint">*required</span></label>
+            <input type="text" name="license-number" placeholder="YOURCO123" required>
+          </div>
+          <div class="form-group full">
+            <label>Company Description <span class="label-hint">*required — 2 to 4 sentences, tells prospects who you are and why you're different</span></label>
+            <textarea name="description" placeholder="We've been building backyard cottages, DADUs, and ADUs across Seattle and King County since 2018. Our team handles everything — feasibility, design, permits, and construction — so you never have to chase down multiple contractors..." required oninput="updateCount(this, 'desc-count')"></textarea>
+            <div class="char-count"><span id="desc-count">0</span> characters — aim for 200–350</div>
+          </div>
+          <div class="form-group full">
+            <label>Service Area <span class="label-hint">List the cities/neighborhoods you serve</span></label>
+            <input type="text" name="service-area" placeholder="Seattle · Bellevue · Kirkland · Redmond · All of King County">
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT INFO -->
+      <div class="form-section">
+        <div class="form-section-title">Contact Information</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Phone Number <span class="label-hint">*required</span></label>
+            <input type="tel" name="phone" placeholder="206-555-0123" required>
+          </div>
+          <div class="form-group">
+            <label>Email Address <span class="label-hint">*required</span></label>
+            <input type="email" name="email" placeholder="hello@yourcompany.com" required>
+          </div>
+          <div class="form-group full">
+            <label>Website URL</label>
+            <input type="url" name="website" placeholder="https://yourcompany.com">
+          </div>
+        </div>
+      </div>
+
+      <!-- LOGO UPLOAD -->
+      <div class="form-section">
+        <div class="form-section-title">Company Logo</div>
+        <div class="info-box">
+          <p><strong>Logo tips:</strong> Upload a PNG or JPG with a transparent or white background. Minimum 300x300 pixels. Square logos work best. If you don't have a logo file, email it separately to your TMS representative.</p>
+        </div>
+        <label class="file-upload" for="logo-upload">
+          <input type="file" id="logo-upload" name="logo" accept="image/png, image/jpeg, image/jpg" onchange="previewLogo(this)">
+          <span class="file-upload-icon">🖼️</span>
+          <div class="file-upload-text">Click to upload your company logo</div>
+          <div class="file-upload-hint">PNG or JPG · Max 5MB · Square format preferred</div>
+        </label>
+        <div class="file-preview" id="logo-preview">
+          <img id="logo-preview-img" src="" alt="Logo preview">
+          <p style="font-size:12px; color:var(--sage); margin-top:6px;">Logo uploaded ✓</p>
+        </div>
+      </div>
+
+      <!-- CALL TO ACTION -->
+      <div class="form-section">
+        <div class="form-section-title">Your Call To Action</div>
+        <div class="form-grid">
+          <div class="form-group full">
+            <label>CTA Button Text <span class="label-hint">What should the button say?</span></label>
+            <select name="cta-text">
+              <option value="Book Your Free Feasibility Review →">Book Your Free Feasibility Review →</option>
+              <option value="Schedule Your Free Consultation →">Schedule Your Free Consultation →</option>
+              <option value="Get Your Free ADU Assessment →">Get Your Free ADU Assessment →</option>
+              <option value="Call Us Today — Free Consultation →">Call Us Today — Free Consultation →</option>
+              <option value="custom">Custom — I'll specify below</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Custom CTA Text <span class="label-hint">Only needed if you selected "Custom" above</span></label>
+            <input type="text" name="cta-custom" placeholder="Your custom button text here...">
+          </div>
+        </div>
+      </div>
+
+      <!-- AUTHORIZATION -->
+      <div class="form-section">
+        <div class="form-section-title">Builder Authorization</div>
+        <div class="auth-box">
+          <p>By submitting this form you authorize Today's Marketing Strategies LLC to use your company name, logo, description, and contact information on your designated builder profile page within the Seattle ADU Planning Guide. This authorization applies to your contracted geo territory only. You may update your profile information at any time by resubmitting this form.</p>
+          <div class="auth-check">
+            <input type="checkbox" id="auth-check" name="authorized" required>
+            <label for="auth-check">I am an authorized representative of the company named above and I authorize Today's Marketing Strategies LLC to publish this profile in my contracted geo territory.</label>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Your Full Name <span class="label-hint">*required — authorized representative</span></label>
+              <input type="text" name="authorized-name" placeholder="Jane Smith" required>
+            </div>
+            <div class="form-group">
+              <label>Your Title</label>
+              <input type="text" name="authorized-title" placeholder="Owner / Managing Partner">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUBMIT -->
+      <div class="submit-section">
+        <h3>Ready to submit your profile?</h3>
+        <p>We'll build your page and send you a preview within 2 business days. Questions? Contact your TMS representative.</p>
+        <button type="submit" class="submit-btn">Submit My Builder Profile →</button>
+        <p class="submit-note">Your information is kept strictly confidential and used only within your contracted geo territory.</p>
+      </div>
+
+    </form>
+
+    <div id="success-msg">
+      <h2>Profile submitted! ✓</h2>
+      <p>Thank you. We've received your builder profile and will have a preview ready within 2 business days. Your TMS representative will be in touch to confirm details before anything goes live.</p>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  function checkPassword() {
+    var input = document.getElementById("password-input").value;
+    if (input === "tms2025") {
+      document.getElementById("password-gate").style.display = "none";
+      document.getElementById("main-content").style.display = "block";
+    } else {
+      document.getElementById("gate-error").style.display = "block";
+      document.getElementById("password-input").value = "";
+      document.getElementById("password-input").focus();
+    }
+  }
+
+  // TAB SWITCHING
+  function showTab(tabName, el) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('tab-' + tabName).classList.add('active');
+    if(el) el.classList.add('active');
+  }
+
+  // CHAR COUNT
+  function updateCount(el, countId) {
+    document.getElementById(countId).textContent = el.value.length;
+  }
+
+  // LOGO PREVIEW
+  function previewLogo(input) {
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('logo-preview-img').src = e.target.result;
+        document.getElementById('logo-preview').style.display = 'block';
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  // FORM SUBMIT
+  document.getElementById('builder-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('builder-form').style.display = 'none';
+    document.getElementById('success-msg').style.display = 'block';
+    window.scrollTo(0, 0);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Build Now | Seattle ADU & Tiny Home Builders</title>
+<meta name="description" content="Seattle just handed homeowners a money machine. New 2025 zoning laws make building an ADU or tiny home faster, easier and more profitable than ever. Here's what changed.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green: #1c3a2a;
+    --amber: #c8902a;
+    --warm-white: #f7f4ef;
+    --sage: #5a6b5e;
+    --linen: #e8e4df;
+    --green-light: #2a5240;
+    --amber-light: #d9a040;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color: var(--green); font-size: 16px; line-height: 1.7; }
+
+  /* NAV */
+  nav { background: var(--green); padding: 0 2.5rem; display: flex; justify-content: space-between; align-items: center; height: 64px; position: sticky; top: 0; z-index: 100; }
+  .nav-logo { color: #fff; font-size: 16px; font-weight: 600; text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+  .nav-links a:hover { color: #fff; }
+  .nav-cta { background: var(--amber); color: #fff !important; padding: 8px 20px; border-radius: 6px; font-weight: 500 !important; }
+
+  /* HERO */
+  .hero { padding: 5rem 2.5rem 3rem; text-align: center; max-width: 780px; margin: 0 auto; }
+  .tag { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; display: block; }
+  .tag-amber { color: var(--amber); }
+  h1 { font-size: 38px; font-weight: 600; line-height: 1.2; color: var(--green); margin-bottom: 1.25rem; letter-spacing: -0.02em; }
+  .hero-sub { font-size: 17px; color: var(--sage); line-height: 1.75; margin-bottom: 2rem; max-width: 620px; margin-left: auto; margin-right: auto; }
+
+  /* ALERT BAR */
+  .alert-bar { background: var(--amber); padding: 1rem 2.5rem; text-align: center; }
+  .alert-bar p { font-size: 15px; font-weight: 500; color: #fff; }
+  .alert-bar span { font-weight: 400; opacity: 0.85; }
+
+  /* TIMELINE */
+  .timeline-section { padding: 5rem 2.5rem; max-width: 860px; margin: 0 auto; }
+  .timeline-section h2 { font-size: 30px; font-weight: 600; color: var(--green); margin-bottom: 0.75rem; }
+  .timeline-section .intro { font-size: 16px; color: var(--sage); margin-bottom: 3rem; max-width: 600px; }
+  .timeline { position: relative; }
+  .timeline::before { content: ''; position: absolute; left: 28px; top: 0; bottom: 0; width: 2px; background: var(--linen); }
+  .timeline-item { display: flex; gap: 2rem; margin-bottom: 2.5rem; position: relative; }
+  .timeline-dot { width: 58px; height: 58px; border-radius: 50%; background: var(--green); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; flex-shrink: 0; position: relative; z-index: 1; }
+  .timeline-dot.amber { background: var(--amber); }
+  .timeline-content { padding-top: 8px; }
+  .timeline-year { font-size: 12px; font-weight: 600; color: var(--amber); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+  .timeline-title { font-size: 18px; font-weight: 600; color: var(--green); margin-bottom: 8px; }
+  .timeline-desc { font-size: 14px; color: var(--sage); line-height: 1.75; }
+
+  /* VIDEO ROW */
+  .video-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--linen); border-bottom: 1px solid var(--linen); min-height: 380px; }
+  .video-block { background: #111; position: relative; overflow: hidden; }
+  .video-block iframe { width: 100%; height: 100%; min-height: 380px; border: none; }
+  .video-text { padding: 3.5rem; display: flex; flex-direction: column; justify-content: center; background: #f0ede7; }
+  .video-text h2 { font-size: 26px; font-weight: 600; color: var(--green); margin-bottom: 1rem; line-height: 1.3; }
+  .video-text p { font-size: 15px; color: var(--sage); line-height: 1.8; margin-bottom: 1.5rem; }
+  .row-link { font-size: 14px; font-weight: 500; color: var(--amber); text-decoration: none; }
+
+  /* NUMBERS SECTION */
+  .numbers { padding: 5rem 2.5rem; background: var(--green); }
+  .numbers-header { text-align: center; margin-bottom: 3rem; }
+  .numbers-header h2 { font-size: 30px; font-weight: 600; color: #fff; margin-bottom: 0.75rem; }
+  .numbers-header p { font-size: 15px; color: rgba(255,255,255,0.65); max-width: 500px; margin: 0 auto; }
+  .numbers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: 900px; margin: 0 auto; }
+  .number-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 1.75rem; text-align: center; }
+  .number-big { font-size: 36px; font-weight: 600; color: var(--amber); display: block; margin-bottom: 8px; }
+  .number-label { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.5; }
+  .number-source { font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 8px; display: block; }
+
+  /* RULE CHANGES */
+  .rules { padding: 5rem 2.5rem; max-width: 900px; margin: 0 auto; }
+  .rules h2 { font-size: 30px; font-weight: 600; color: var(--green); margin-bottom: 0.75rem; }
+  .rules-intro { font-size: 16px; color: var(--sage); margin-bottom: 3rem; max-width: 600px; }
+  .rules-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .rule-card { background: #fff; border: 1px solid var(--linen); border-radius: 10px; padding: 1.5rem; border-left: 4px solid var(--amber); }
+  .rule-tag { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--amber); margin-bottom: 8px; }
+  .rule-title { font-size: 17px; font-weight: 600; color: var(--green); margin-bottom: 8px; }
+  .rule-desc { font-size: 13px; color: var(--sage); line-height: 1.7; }
+  .rule-impact { font-size: 12px; font-weight: 500; color: var(--green); margin-top: 10px; background: #f0ede7; padding: 6px 10px; border-radius: 4px; display: inline-block; }
+
+  /* VIDEO 2 ROW */
+  .video-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--linen); border-bottom: 1px solid var(--linen); min-height: 380px; }
+  .video-text-2 { padding: 3.5rem; display: flex; flex-direction: column; justify-content: center; background: var(--warm-white); }
+
+  /* LEAD MAGNET */
+  .lead-magnet { padding: 5rem 2.5rem; background: var(--green); text-align: center; }
+  .lead-magnet h2 { font-size: 30px; font-weight: 600; color: #fff; margin-bottom: 1rem; }
+  .lead-magnet p { font-size: 16px; color: rgba(255,255,255,0.7); margin-bottom: 2.5rem; max-width: 520px; margin-left: auto; margin-right: auto; }
+  .lead-form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+  .lead-form input, .lead-form select { padding: 14px 18px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 15px; background: rgba(255,255,255,0.1); color: #fff; outline: none; }
+  .lead-form input::placeholder { color: rgba(255,255,255,0.45); }
+  .lead-form select { color: rgba(255,255,255,0.75); appearance: none; }
+  .lead-form select option { background: var(--green); color: #fff; }
+  .btn-submit { background: var(--amber); color: #fff; border: none; padding: 16px 28px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; cursor: pointer; transition: background 0.2s; margin-top: 4px; }
+  .btn-submit:hover { background: var(--amber-light); }
+  .trust-line { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 10px; }
+
+  /* FOOTER */
+  footer { background: #111d16; padding: 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .footer-logo { color: #fff; font-size: 15px; font-weight: 500; }
+  .footer-tagline { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 4px; }
+  .footer-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; }
+  .footer-links a:hover { color: #fff; }
+  .footer-phone { font-size: 15px; font-weight: 500; color: var(--amber); text-decoration: none; }
+  .footer-copy { width: 100%; font-size: 12px; color: rgba(255,255,255,0.25); border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem; margin-top: 0.5rem; }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav { padding: 0 1.25rem; }
+    .nav-links { display: none; }
+    h1 { font-size: 28px; }
+    .hero { padding: 3rem 1.5rem 2rem; }
+    .timeline-section { padding: 3rem 1.5rem; }
+    .video-row, .video-row-2 { grid-template-columns: 1fr; }
+    .video-block iframe { min-height: 240px; }
+    .video-text, .video-text-2 { padding: 2rem 1.5rem; }
+    .numbers { padding: 3rem 1.5rem; }
+    .numbers-grid { grid-template-columns: 1fr; }
+    .rules { padding: 3rem 1.5rem; }
+    .rules-grid { grid-template-columns: 1fr; }
+    .lead-magnet { padding: 3rem 1.5rem; }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Seattle ADU Builders</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="why-build-now.html" style="color:#fff;">Why Build Now</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="index.html#assessment" class="nav-cta">Free Assessment</a></li>
+  </ul>
+</nav>
+
+<!-- ALERT BAR -->
+<div class="alert-bar">
+  <p>🚨 New 2025 Seattle zoning laws are now in effect — <span>the window to act before your neighbors do is open right now.</span></p>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="tag">Seattle ADU & Tiny Home Guide — Why 2025 Changes Everything</span>
+  <h1>Seattle just handed homeowners a money machine. Here's what changed.</h1>
+  <p class="hero-sub">Over the past six years Seattle has quietly removed almost every barrier to building a backyard cottage, DADU, or tiny home. Most homeowners have no idea. The ones who do are already collecting rental income. Here's the full story — in plain English, with verified numbers.</p>
+</div>
+
+<!-- TIMELINE -->
+<section class="timeline-section">
+  <h2>The Seattle ADU revolution — a timeline.</h2>
+  <p class="intro">Six years of rule changes that made your property significantly more valuable. Each milestone opened a new door for Seattle homeowners.</p>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot">2019</div>
+      <div class="timeline-content">
+        <div class="timeline-year">The First Big Unlock</div>
+        <div class="timeline-title">Seattle opens ADUs to nearly every lot</div>
+        <div class="timeline-desc">Seattle City Council passed sweeping ADU legislation — allowing ADUs on nearly all lots in Neighborhood Residential zones, removing owner-occupancy requirements, and allowing up to two ADUs per lot. ADU permits immediately began climbing. Most homeowners still didn't know it had happened.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">2022</div>
+      <div class="timeline-content">
+        <div class="timeline-year">The Surge Nobody Noticed</div>
+        <div class="timeline-title">ADU permits jump 300% since 2018</div>
+        <div class="timeline-desc">988 DADUs were permitted in Seattle in 2022 — a fourfold increase since 2018. By March 2023, builders were constructing more ADUs than new single-family homes. The smart money was already moving. Most homeowners were still waiting.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot amber">2023</div>
+      <div class="timeline-content">
+        <div class="timeline-year">The State Steps In</div>
+        <div class="timeline-title">Washington passes HB 1337 — statewide ADU reform</div>
+        <div class="timeline-desc">Washington State passed House Bill 1337, requiring every city in the state to update their zoning and development regulations by June 30, 2025. Seattle didn't just comply — they went further. The door was now being forced open statewide.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot amber">July 2025</div>
+      <div class="timeline-content">
+        <div class="timeline-year">The Game Changer</div>
+        <div class="timeline-title">Seattle's new rules take effect — everything changes</div>
+        <div class="timeline-desc">July 1, 2025: Two ADUs now allowed per lot. No owner-occupancy requirement. Height limits raised to 32 feet. Parking requirements eliminated. Permits available in as little as 2 weeks using pre-approved designs. DADUs can be subdivided and sold separately. The homeowners acting now are locking in rental income before their neighbors figure it out.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot amber">Oct 2025</div>
+      <div class="timeline-content">
+        <div class="timeline-year">Seattle Goes Even Further</div>
+        <div class="timeline-title">Up to FOUR units now allowed on a single Seattle lot</div>
+        <div class="timeline-desc">As of October 2025, Seattle's Neighborhood Residential zones now allow up to four separate homes on one lot. The distinction between "primary" and "accessory" dwelling is essentially erased. Your single-family lot just became a multi-unit investment property — whether you build on it or not.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO ROW 1 -->
+<div class="video-row">
+  <div class="video-block">
+    <iframe
+      src="https://www.youtube.com/embed/wn8IcDesWIY?rel=0&modestbranding=1"
+      title="Why Most Seattle ADU Projects Fail"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div class="video-text">
+    <span class="tag tag-amber">Watch Before You Build</span>
+    <h2>Why most Seattle ADU projects fail — and how to avoid the mistakes.</h2>
+    <p>Most ADU projects that go wrong do so for the same predictable reasons. This short video covers the top mistakes Seattle homeowners make — and exactly how to avoid them before you spend a dollar.</p>
+    <a href="index.html#assessment" class="row-link">Get your free feasibility review →</a>
+  </div>
+</div>
+
+<!-- NUMBERS -->
+<section class="numbers">
+  <div class="numbers-header">
+    <h2>The verified numbers. No puffery.</h2>
+    <p>Every number on this page comes from verified Seattle market data. We don't make claims we can't back up.</p>
+  </div>
+  <div class="numbers-grid">
+    <div class="number-card">
+      <span class="number-big">$2,500</span>
+      <div class="number-label">Average monthly ADU rental income in Seattle — well-designed DADUs command $2,000–$3,500</div>
+      <span class="number-source">Source: Nine8 Redevelopment, Seattle rental market data 2025</span>
+    </div>
+    <div class="number-card">
+      <span class="number-big">$100k–$200k</span>
+      <div class="number-label">Added property value from a well-built Seattle ADU — a 10–20% increase on a typical Seattle home</div>
+      <span class="number-source">Source: Seattle real estate market data 2025</span>
+    </div>
+    <div class="number-card">
+      <span class="number-big">988</span>
+      <div class="number-label">DADU permits issued in Seattle in 2022 — a 4x increase since 2018. Momentum continues through 2026</div>
+      <span class="number-source">Source: Seattle Department of Construction & Inspections</span>
+    </div>
+    <div class="number-card">
+      <span class="number-big">$30,000</span>
+      <div class="number-label">Gross annual rental income from a typical Seattle DADU renting at $2,500/month</div>
+      <span class="number-source">Source: Seattle rental market calculations 2025</span>
+    </div>
+    <div class="number-card">
+      <span class="number-big">8–12 yrs</span>
+      <div class="number-label">Typical payback period for a Seattle DADU — after which it generates pure profit indefinitely</div>
+      <span class="number-source">Source: Seattle Real Estate Central, 2026 guide</span>
+    </div>
+    <div class="number-card">
+      <span class="number-big">3.6%</span>
+      <div class="number-label">Seattle rental vacancy rate — one of the lowest in the country. High demand means your ADU stays rented</div>
+      <span class="number-source">Source: JCDC Real Estate, January 2026</span>
+    </div>
+  </div>
+</section>
+
+<!-- RULE CHANGES -->
+<section class="rules">
+  <h2>The 2025 rule changes — explained simply.</h2>
+  <p class="rules-intro">Here's exactly what changed, what it means for you, and why the homeowners who act in 2026 have a significant advantage over those who wait.</p>
+  <div class="rules-grid">
+    <div class="rule-card">
+      <div class="rule-tag">Change 01 — July 2025</div>
+      <div class="rule-title">Two ADUs now allowed per lot</div>
+      <div class="rule-desc">You can now build a backyard cottage AND convert your basement — doubling your income potential on the same property you already own. Previously, most Seattle lots were limited to one ADU.</div>
+      <div class="rule-impact">What it means: Two rental units. Two income streams. Same lot.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-tag">Change 02 — July 2025</div>
+      <div class="rule-title">No owner-occupancy requirement</div>
+      <div class="rule-desc">You no longer have to live on the property to build or rent an ADU. You can rent out both your main house and your ADU simultaneously — or build purely as an investment property.</div>
+      <div class="rule-impact">What it means: Pure investment play now possible.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-tag">Change 03 — July 2025</div>
+      <div class="rule-title">Height limits raised to 32 feet</div>
+      <div class="rule-desc">Two-story backyard cottages are now legal in most Seattle Neighborhood Residential zones. Height was previously capped at 14–18 feet in many areas. More height means more square footage and higher rental value.</div>
+      <div class="rule-impact">What it means: Two-story DADUs now possible in most neighborhoods.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-tag">Change 04 — July 2025</div>
+      <div class="rule-title">Parking requirements eliminated</div>
+      <div class="rule-desc">Seattle removed all off-street parking requirements for ADUs near transit. You can use your entire buildable area for living space rather than a driveway or carport — maximizing your rental square footage.</div>
+      <div class="rule-impact">What it means: More buildable area on smaller lots.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-tag">Change 05 — July 2025</div>
+      <div class="rule-title">Permits available in 2–6 weeks</div>
+      <div class="rule-desc">Seattle's ADUniverse pre-approved DADU designs dramatically speed up permitting. Previously permits could take 6+ months. Using pre-approved plans, homeowners are now getting permits in 2–6 weeks.</div>
+      <div class="rule-impact">What it means: Start building months sooner.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-tag">Change 06 — 2025</div>
+      <div class="rule-title">DADUs can be sold separately</div>
+      <div class="rule-desc">For the first time, DADUs can be subdivided and sold with their own title — essentially becoming independent condominiums. In 2022, ADU condos in Seattle sold for an average of $750,000 in premium neighborhoods.</div>
+      <div class="rule-impact">What it means: A brand new exit strategy for investors.</div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO ROW 2 -->
+<div class="video-row-2">
+  <div class="video-text-2">
+    <span class="tag tag-amber">Avoid Costly Mistakes</span>
+    <h2>The ADU mistakes that cost Seattle homeowners thousands.</h2>
+    <p>Before you hire a builder, watch this. The most expensive mistakes in Seattle ADU projects happen in the first 30 days — before a single nail is driven. This video covers what to watch for and how to protect yourself.</p>
+    <a href="how-it-works.html" class="row-link">See the full process →</a>
+  </div>
+  <div class="video-block">
+    <iframe
+      src="https://www.youtube.com/embed/wn8IcDesWIY?rel=0&modestbranding=1"
+      title="Avoid These Costly ADU Mistakes"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+<!-- LEAD MAGNET -->
+<section class="lead-magnet" id="assessment">
+  <span class="tag" style="color:rgba(255,255,255,0.5);">Free Seattle ADU Maximizer Assessment</span>
+  <h2>Find out what YOUR property qualifies for — free.</h2>
+  <p>Whether you're a Seattle homeowner ready to build a backyard cottage or someone dreaming of their own tiny home in the Pacific Northwest — your next step is the same. Takes 60 seconds. Completely free.</p>
+  <form class="lead-form" netlify name="adu-assessment-p3">
+    <input type="hidden" name="form-name" value="adu-assessment-p3">
+    <input type="text" name="name" placeholder="Your first name" required>
+    <input type="email" name="email" placeholder="Email address" required>
+    <input type="text" name="zip" placeholder="Seattle area zip code" required>
+    <select name="prospect-type">
+      <option value="" disabled selected>I am a...</option>
+      <option value="homeowner-income">Homeowner wanting rental income</option>
+      <option value="homeowner-family">Homeowner wanting family space</option>
+      <option value="tiny-home">Looking to build my own tiny home</option>
+      <option value="researching">Just researching for now</option>
+    </select>
+    <button type="submit" class="btn-submit">Send Me My Free ADU Maximizer Assessment</button>
+    <p class="trust-line">No spam. No obligation. Just clear answers about your property.</p>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Seattle ADU Builders</div>
+    <div class="footer-tagline">Seattle's ADU & Tiny Home Building Resource</div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="why-build-now.html">Why Build Now</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="index.html#assessment">Free Assessment</a></li>
+  </ul>
+  <a href="tel:2062587315" class="footer-phone">206-258-7315</a>
+  <p class="footer-copy">© 2025 Seattle Custom ADU Builders. All rights reserved. Serving Seattle, King County, and greater Washington State.</p>
+</footer>
+
+</body>
+</html>

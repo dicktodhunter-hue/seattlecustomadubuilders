@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How It Works | Seattle ADU & Tiny Home Builders</title>
+<meta name="description" content="Learn exactly how the Seattle ADU building process works — from first conversation to rental income. Step by step guide for Seattle homeowners and tiny home dreamers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green: #1c3a2a;
+    --amber: #c8902a;
+    --warm-white: #f7f4ef;
+    --sage: #5a6b5e;
+    --linen: #e8e4df;
+    --green-light: #2a5240;
+    --amber-light: #d9a040;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color: var(--green); font-size: 16px; line-height: 1.7; }
+
+  /* NAV */
+  nav { background: var(--green); padding: 0 2.5rem; display: flex; justify-content: space-between; align-items: center; height: 64px; position: sticky; top: 0; z-index: 100; }
+  .nav-logo { color: #fff; font-size: 16px; font-weight: 600; text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+  .nav-links a:hover { color: #fff; }
+  .nav-cta { background: var(--amber); color: #fff !important; padding: 8px 20px; border-radius: 6px; font-weight: 500 !important; }
+
+  /* HERO */
+  .hero { padding: 5rem 2.5rem 3rem; text-align: center; max-width: 780px; margin: 0 auto; }
+  .tag { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; display: block; }
+  h1 { font-size: 38px; font-weight: 600; line-height: 1.2; color: var(--green); margin-bottom: 1.25rem; letter-spacing: -0.02em; }
+  .hero-sub { font-size: 17px; color: var(--sage); line-height: 1.75; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+  /* VIDEO */
+  .video-section { max-width: 900px; margin: 0 auto; padding: 0 2.5rem 4rem; }
+  .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 24px rgba(28,58,42,0.15); }
+  .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+  .video-caption { text-align: center; font-size: 14px; color: var(--sage); margin-top: 1rem; }
+
+  /* PHASES */
+  .phases { padding: 4rem 2.5rem; background: var(--green); }
+  .phases-header { text-align: center; margin-bottom: 3rem; }
+  .phases-header h2 { font-size: 32px; font-weight: 600; color: #fff; margin-bottom: 0.75rem; }
+  .phases-header p { font-size: 16px; color: rgba(255,255,255,0.65); max-width: 520px; margin: 0 auto; }
+  .phases-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+  .phase-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 2rem; }
+  .phase-number { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 12px; display: block; }
+  .phase-title { font-size: 20px; font-weight: 600; color: #fff; margin-bottom: 10px; }
+  .phase-desc { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.75; }
+  .phase-time { display: inline-block; margin-top: 12px; font-size: 12px; color: var(--amber); font-weight: 500; }
+
+  /* WHAT TO EXPECT */
+  .expect { padding: 5rem 2.5rem; max-width: 900px; margin: 0 auto; }
+  .expect h2 { font-size: 28px; font-weight: 600; color: var(--green); margin-bottom: 2rem; text-align: center; }
+  .expect-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .expect-card { background: #fff; border: 1px solid var(--linen); border-radius: 10px; padding: 1.5rem; }
+  .expect-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+  .expect-title { font-size: 16px; font-weight: 600; color: var(--green); margin-bottom: 8px; }
+  .expect-desc { font-size: 13px; color: var(--sage); line-height: 1.7; }
+
+  /* CHECKLIST */
+  .checklist-section { background: #f0ede7; padding: 4rem 2.5rem; }
+  .checklist-inner { max-width: 780px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  .checklist-text h2 { font-size: 28px; font-weight: 600; color: var(--green); margin-bottom: 1rem; }
+  .checklist-text p { font-size: 15px; color: var(--sage); line-height: 1.75; margin-bottom: 1.5rem; }
+  .checklist { list-style: none; }
+  .checklist li { font-size: 14px; color: var(--green); padding: 8px 0; border-bottom: 1px solid var(--linen); display: flex; align-items: flex-start; gap: 10px; }
+  .checklist li:last-child { border-bottom: none; }
+  .check { color: var(--amber); font-weight: 600; flex-shrink: 0; }
+  .checklist-cta { background: var(--green); border-radius: 10px; padding: 2rem; }
+  .checklist-cta h3 { font-size: 20px; font-weight: 600; color: #fff; margin-bottom: 0.75rem; }
+  .checklist-cta p { font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; line-height: 1.7; }
+  .btn-primary { display: inline-block; background: var(--amber); color: #fff; padding: 12px 24px; border-radius: 6px; font-size: 15px; font-weight: 500; text-decoration: none; transition: background 0.2s; }
+  .btn-primary:hover { background: var(--amber-light); }
+
+  /* STATS */
+  .stats-bar { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--green); }
+  .stat { padding: 2rem 1.5rem; text-align: center; border-right: 1px solid rgba(255,255,255,0.1); }
+  .stat:last-child { border-right: none; }
+  .stat-num { font-size: 28px; font-weight: 600; color: var(--amber); display: block; }
+  .stat-label { font-size: 13px; color: rgba(255,255,255,0.65); margin-top: 4px; display: block; }
+
+  /* FAQ TEASER */
+  .faq-teaser { padding: 4rem 2.5rem; text-align: center; }
+  .faq-teaser h2 { font-size: 26px; font-weight: 600; color: var(--green); margin-bottom: 1rem; }
+  .faq-teaser p { font-size: 15px; color: var(--sage); margin-bottom: 2rem; }
+  .btn-secondary { display: inline-block; border: 2px solid var(--green); color: var(--green); padding: 12px 28px; border-radius: 6px; font-size: 15px; font-weight: 500; text-decoration: none; transition: all 0.2s; margin-right: 12px; }
+  .btn-secondary:hover { background: var(--green); color: #fff; }
+
+  /* CAPTURE */
+  .capture { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--linen); }
+  .capture-text { padding: 3.5rem; display: flex; flex-direction: column; justify-content: center; background: var(--green); }
+  .capture-text .tag { color: rgba(255,255,255,0.5); }
+  .capture-text h2 { font-size: 26px; font-weight: 600; color: #fff; margin-bottom: 0.75rem; }
+  .capture-text p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 1.75rem; }
+  .form-stack { display: flex; flex-direction: column; gap: 10px; }
+  .form-stack input, .form-stack select { padding: 12px 16px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 14px; background: rgba(255,255,255,0.1); color: #fff; outline: none; }
+  .form-stack input::placeholder { color: rgba(255,255,255,0.45); }
+  .form-stack select { color: rgba(255,255,255,0.75); appearance: none; }
+  .form-stack select option { background: var(--green); color: #fff; }
+  .btn-submit { background: var(--amber); color: #fff; border: none; padding: 14px 28px; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; transition: background 0.2s; margin-top: 4px; }
+  .btn-submit:hover { background: var(--amber-light); }
+  .trust-line { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 10px; text-align: center; }
+  .capture-image { background: #2a4a38; display: flex; align-items: center; justify-content: center; min-height: 480px; }
+  .capture-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* FOOTER */
+  footer { background: #111d16; padding: 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .footer-logo { color: #fff; font-size: 15px; font-weight: 500; }
+  .footer-tagline { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 4px; }
+  .footer-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: #fff; }
+  .footer-phone { font-size: 15px; font-weight: 500; color: var(--amber); text-decoration: none; }
+  .footer-copy { width: 100%; font-size: 12px; color: rgba(255,255,255,0.25); border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem; margin-top: 0.5rem; }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav { padding: 0 1.25rem; }
+    .nav-links { display: none; }
+    h1 { font-size: 28px; }
+    .hero { padding: 3rem 1.5rem 2rem; }
+    .video-section { padding: 0 1.5rem 3rem; }
+    .phases { padding: 3rem 1.5rem; }
+    .phases-grid { grid-template-columns: 1fr; }
+    .expect { padding: 3rem 1.5rem; }
+    .expect-grid { grid-template-columns: 1fr; }
+    .checklist-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .capture { grid-template-columns: 1fr; }
+    .capture-image { min-height: 280px; }
+    .capture-text { padding: 2.5rem 1.5rem; }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Seattle ADU Builders</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="how-it-works.html" style="color:#fff;">How It Works</a></li>
+    <li><a href="index.html#tiny-homes">Tiny Homes</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="index.html#assessment" class="nav-cta">Free Assessment</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="tag">Seattle ADU & Tiny Home Builders — The Process</span>
+  <h1>From backyard idea to rental income — here's exactly how it works.</h1>
+  <p class="hero-sub">Most Seattle homeowners have questions before they commit to anything. Good. We answer all of them — starting with this honest, no-sales-pitch walkthrough of the entire ADU and tiny home building process.</p>
+</div>
+
+<!-- VIDEO -->
+<div class="video-section">
+  <div class="video-wrap">
+    <iframe
+      src="https://www.youtube.com/embed/0Z6e_wyHMr8?rel=0&modestbranding=1"
+      title="Top 5 Questions to Ask Your Seattle ADU Builder"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <p class="video-caption">Top 5 Questions to Ask Your Seattle Home Contractor — 4:28 min</p>
+</div>
+
+<!-- PHASES -->
+<section class="phases">
+  <div class="phases-header">
+    <h2>The four steps from idea to income.</h2>
+    <p>Every Seattle ADU and tiny home project follows this proven path. Here's what to expect at each stage.</p>
+  </div>
+  <div class="phases-grid">
+    <div class="phase-card">
+      <span class="phase-number">Step 01</span>
+      <div class="phase-title">Plan — Free Feasibility Review</div>
+      <div class="phase-desc">Before you spend a dollar, we analyze your specific lot — its GIS data, zoning overlays, setbacks, and utility maps. We show you exactly what's possible, what it costs, and what it will earn. No obligation, no pressure. Just clear answers.</div>
+      <span class="phase-time">Timeline: 1–2 weeks</span>
+    </div>
+    <div class="phase-card">
+      <span class="phase-number">Step 02</span>
+      <div class="phase-title">Design — Your ADU Takes Shape</div>
+      <div class="phase-desc">Working with a licensed Seattle architect, your ADU is designed to maximize rental value, natural light, privacy, and neighborhood compatibility. Seattle's pre-approved DADU designs can dramatically speed up this phase and reduce architectural fees.</div>
+      <span class="phase-time">Timeline: 4–8 weeks</span>
+    </div>
+    <div class="phase-card">
+      <span class="phase-number">Step 03</span>
+      <div class="phase-title">Permit — City Approval Made Simple</div>
+      <div class="phase-desc">Your builder manages the entire Seattle permitting process — submitting plans, responding to city comments, and tracking approvals. Using Seattle's ADUniverse pre-approved designs, permits can be issued in as little as 2–6 weeks. Standard permits typically take 4–8 weeks under 2025 rules.</div>
+      <span class="phase-time">Timeline: 2–8 weeks</span>
+    </div>
+    <div class="phase-card">
+      <span class="phase-number">Step 04</span>
+      <div class="phase-title">Build — From Ground to Keys</div>
+      <div class="phase-desc">Construction begins once permits are issued. A typical Seattle DADU takes 6–12 months to complete depending on size and complexity. Garage conversions and basement ADUs are often faster — 4–8 months. Your builder keeps you informed at every milestone, from foundation to final inspection.</div>
+      <span class="phase-time">Timeline: 4–12 months</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO EXPECT -->
+<section class="expect">
+  <h2>What makes a great Seattle ADU builder?</h2>
+  <div class="expect-grid">
+    <div class="expect-card">
+      <span class="expect-icon">📋</span>
+      <div class="expect-title">Verified local portfolio</div>
+      <div class="expect-desc">Look for completed Seattle ADU and DADU projects — not just renderings. Ask for photos, floor plans, and references from recent King County builds.</div>
+    </div>
+    <div class="expect-card">
+      <span class="expect-icon">🏛️</span>
+      <div class="expect-title">Seattle permit expertise</div>
+      <div class="expect-desc">Your builder should know Seattle's ADUniverse program, the 2025 HB 1337 changes, and how to navigate SDCI reviews without costly delays.</div>
+    </div>
+    <div class="expect-card">
+      <span class="expect-icon">💰</span>
+      <div class="expect-title">Transparent pricing</div>
+      <div class="expect-desc">A trustworthy builder provides clear cost breakdowns before you sign anything. Seattle DADUs typically run $250,000–$400,000 — no surprises.</div>
+    </div>
+    <div class="expect-card">
+      <span class="expect-icon">📅</span>
+      <div class="expect-title">Realistic timelines</div>
+      <div class="expect-desc">Beware of builders promising unusually fast builds. A quality Seattle DADU takes time done right. Ask for a detailed project schedule upfront.</div>
+    </div>
+    <div class="expect-card">
+      <span class="expect-icon">⚡</span>
+      <div class="expect-title">Washington State licensed</div>
+      <div class="expect-desc">Verify your builder holds a current Washington State Contractor License from L&I, plus appropriate liability insurance and workers' compensation coverage.</div>
+    </div>
+    <div class="expect-card">
+      <span class="expect-icon">🤝</span>
+      <div class="expect-title">Feasibility first policy</div>
+      <div class="expect-desc">The best Seattle ADU builders always start with a free feasibility review before asking you to sign anything. That's the standard we hold our builders to.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CHECKLIST -->
+<section class="checklist-section">
+  <div class="checklist-inner">
+    <div class="checklist-text">
+      <h2>Your pre-build checklist for Seattle ADU success.</h2>
+      <p>Before you commit to any builder or design, make sure you've checked these boxes. This checklist comes from real Seattle ADU projects — the ones that went smoothly and the ones that didn't.</p>
+      <ul class="checklist">
+        <li><span class="check">✓</span> Confirm your lot meets Seattle's 3,200 sq ft minimum</li>
+        <li><span class="check">✓</span> Verify zoning with Seattle's ADUniverse tool</li>
+        <li><span class="check">✓</span> Check existing utility connections (water, sewer, electrical)</li>
+        <li><span class="check">✓</span> Get at least two builder quotes with full cost breakdowns</li>
+        <li><span class="check">✓</span> Verify builder's Washington State license and insurance</li>
+        <li><span class="check">✓</span> Ask for references from recent Seattle ADU projects</li>
+        <li><span class="check">✓</span> Understand your financing options before signing anything</li>
+        <li><span class="check">✓</span> Get your free feasibility review — it costs nothing</li>
+      </ul>
+    </div>
+    <div class="checklist-cta">
+      <h3>Ready to start your feasibility review?</h3>
+      <p>It takes 60 seconds and costs nothing. We analyze your lot and show you exactly what's possible — what you can build, what it costs, and what it will earn.</p>
+      <a href="index.html#assessment" class="btn-primary">Get My Free ADU Maximizer Assessment</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat">
+    <span class="stat-num">$2,500/mo</span>
+    <span class="stat-label">Average ADU rental income in Seattle</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">$100k–$200k</span>
+    <span class="stat-label">Added property value from a well-built ADU</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">2–6 weeks</span>
+    <span class="stat-label">Permit timeline with pre-approved Seattle designs</span>
+  </div>
+</div>
+
+<!-- FAQ TEASER -->
+<section class="faq-teaser">
+  <h2>Still have questions?</h2>
+  <p>We've answered the 15 most common questions Seattle homeowners and tiny home dreamers ask us — from zoning and parking to taxes and rental income.</p>
+  <a href="index.html#faq" class="btn-secondary">Read All 15 FAQs</a>
+  <a href="index.html#assessment" class="btn-primary">Get My Free Assessment</a>
+</section>
+
+<!-- LEAD CAPTURE -->
+<section class="capture" id="assessment">
+  <div class="capture-text">
+    <span class="tag">Free — No Obligation — No Sales Pressure</span>
+    <h2>Find out exactly what your Seattle property qualifies for.</h2>
+    <p>Takes 60 seconds. We show you what you can build, what it costs, and what it will earn. Completely free.</p>
+    <form class="form-stack" netlify name="adu-assessment-p2">
+      <input type="hidden" name="form-name" value="adu-assessment-p2">
+      <input type="text" name="name" placeholder="Your first name" required>
+      <input type="email" name="email" placeholder="Email address" required>
+      <input type="text" name="zip" placeholder="Seattle area zip code" required>
+      <select name="prospect-type">
+        <option value="" disabled selected>I am a...</option>
+        <option value="homeowner-income">Homeowner wanting rental income</option>
+        <option value="homeowner-family">Homeowner wanting family space</option>
+        <option value="tiny-home">Looking to build my own tiny home</option>
+        <option value="researching">Just researching for now</option>
+      </select>
+      <button type="submit" class="btn-submit">Send Me My Free ADU Maximizer Assessment</button>
+      <p class="trust-line">No spam. No obligation. Just clear answers about your property.</p>
+    </form>
+  </div>
+  <div class="capture-image">
+    <div style="width:100%; height:100%; min-height:480px; background:#2a4a38; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px;">
+      <div style="font-size:48px; opacity:0.4;">🏡</div>
+      <div style="font-size:12px; color:rgba(255,255,255,0.4); text-transform:uppercase; letter-spacing:0.06em;">Add your image here</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Seattle ADU Builders</div>
+    <div class="footer-tagline">Seattle's ADU & Tiny Home Building Resource</div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="index.html#tiny-homes">Tiny Homes</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="index.html#assessment">Free Assessment</a></li>
+  </ul>
+  <a href="tel:2062587315" class="footer-phone">206-258-7315</a>
+  <p class="footer-copy">© 2025 Seattle Custom ADU Builders. All rights reserved. Serving Seattle, King County, and greater Washington State.</p>
+</footer>
+
+</body>
+</html>
