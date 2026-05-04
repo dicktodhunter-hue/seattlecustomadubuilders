@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seattle Custom ADU Builders | Backyard Cottages & Tiny Homes</title>
+<meta name="description" content="Seattle's trusted ADU and backyard cottage builders. Get matched with a verified local builder in 24 hours. Free assessment. No obligation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest: #1a3a2a;
+  --moss: #2d5a3d;
+  --sage: #4a7c59;
+  --gold: #c8902a;
+  --amber: #e8a830;
+  --cream: #f5f0e8;
+  --warm-white: #faf8f4;
+  --charcoal: #2a2a2a;
+  --gray: #6b7280;
+  --light: #e8e3d8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--warm-white);
+  color: var(--charcoal);
+  overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(26, 58, 42, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 38px;
+  height: 38px;
+  background: var(--gold);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.logo-text {
+  color: white;
+  font-family: 'Fraunces', serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.logo-text span {
+  display: block;
+  font-size: 11px;
+  font-weight: 300;
+  opacity: 0.7;
+  font-family: 'DM Sans', sans-serif;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+nav a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 100px;
+  transition: all 0.2s;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.nav-cta {
+  background: var(--gold) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  padding: 10px 20px !important;
+}
+
+.nav-cta:hover {
+  background: var(--amber) !important;
+  transform: translateY(-1px);
+}
+
+.nav-phone {
+  color: var(--amber) !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left {
+  background: var(--forest);
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-left::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(200, 144, 42, 0.15);
+  border: 1px solid rgba(200, 144, 42, 0.3);
+  color: var(--amber);
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  width: fit-content;
+}
+
+.hero-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--amber);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(42px, 5vw, 64px);
+  font-weight: 900;
+  color: white;
+  line-height: 1.05;
+  margin-bottom: 12px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--amber);
+}
+
+.hero-subhead {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(20px, 2.5vw, 28px);
+  color: rgba(255,255,255,0.6);
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 28px;
+  line-height: 1.3;
+}
+
+.hero p {
+  color: rgba(255,255,255,0.75);
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 40px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 340px;
+}
+
+.btn-primary {
+  display: block;
+  background: var(--gold);
+  color: white;
+  text-decoration: none;
+  padding: 18px 32px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+}
+
+.btn-primary:hover {
+  background: var(--amber);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(200,144,42,0.4);
+}
+
+.btn-secondary {
+  display: block;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.2s;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.hero-trust {
+  display: flex;
+  gap: 24px;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.trust-item {
+  text-align: center;
+}
+
+.trust-number {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--amber);
+  line-height: 1;
+}
+
+.trust-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 4px;
+  line-height: 1.3;
+  max-width: 80px;
+}
+
+.hero-right {
+  position: relative;
+  overflow: hidden;
+  background: var(--moss);
+}
+
+.hero-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  mix-blend-mode: luminosity;
+}
+
+.hero-right-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(45,90,61,0.6) 0%, rgba(26,58,42,0.3) 100%);
+}
+
+.hero-stat-card {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  right: 40px;
+  background: rgba(26,58,42,0.9);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(200,144,42,0.3);
+  border-radius: 16px;
+  padding: 24px 28px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.stat-item .stat-val {
+  font-family: 'Fraunces', serif;
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--amber);
+}
+
+.stat-item .stat-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+/* PROOF BAR */
+.proof-bar {
+  background: var(--gold);
+  padding: 16px 40px;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.proof-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.proof-icon {
+  font-size: 18px;
+}
+
+/* PATHS SECTION */
+.paths {
+  padding: 100px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 900;
+  color: var(--forest);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.section-sub {
+  font-size: 18px;
+  color: var(--gray);
+  max-width: 560px;
+  line-height: 1.6;
+  margin-bottom: 56px;
+}
+
+.paths-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.path-card {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.path-card:hover {
+  transform: translateY(-4px);
+}
+
+.path-card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.path-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26,58,42,0.95) 0%, rgba(26,58,42,0.3) 60%, transparent 100%);
+}
+
+.path-card-content {
+  position: relative;
+  padding: 36px;
+}
+
+.path-icon {
+  font-size: 36px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.path-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.path-card p {
+  color: rgba(255,255,255,0.8);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.path-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold);
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+.path-link:hover {
+  background: var(--amber);
+  gap: 12px;
+}
+
+/* RULE CHANGES */
+.rules {
+  background: var(--forest);
+  padding: 100px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rules::before {
+  content: '2025';
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Fraunces', serif;
+  font-size: 300px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.03);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.rules-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.rules .section-title {
+  color: white;
+}
+
+.rules .section-sub {
+  color: rgba(255,255,255,0.6);
+}
+
+.rules-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.rules-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  color: rgba(255,255,255,0.85);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.rules-list li::before {
+  content: '✓';
+  width: 24px;
+  height: 24px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.rules-image {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4/5;
+}
+
+.rules-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* HOW WE WORK */
+.how {
+  padding: 100px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 56px;
+}
+
+.how-card {
+  background: var(--cream);
+  border-radius: 20px;
+  padding: 40px 36px;
+  position: relative;
+  border: 1px solid var(--light);
+  transition: all 0.3s;
+}
+
+.how-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.how-number {
+  font-family: 'Fraunces', serif;
+  font-size: 64px;
+  font-weight: 900;
+  color: rgba(200,144,42,0.15);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.how-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--forest);
+  margin-bottom: 12px;
+}
+
+.how-card p {
+  color: var(--gray);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.how-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(200,144,42,0.1);
+  color: var(--gold);
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+/* VIDEOS */
+.videos {
+  background: var(--cream);
+  padding: 100px 40px;
+}
+
+.videos-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 56px;
+}
+
+.video-card {
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  aspect-ratio: 9/16;
+  background: var(--forest);
+  transition: transform 0.3s;
+}
+
+.video-card:hover {
+  transform: scale(1.03);
+}
+
+.video-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26,58,42,0.95) 0%, transparent 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px 16px;
+}
+
+.video-play {
+  width: 44px;
+  height: 44px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  margin-bottom: 12px;
+  transition: transform 0.2s;
+}
+
+.video-card:hover .video-play {
+  transform: scale(1.1);
+}
+
+.video-num {
+  font-size: 10px;
+  color: var(--amber);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.video-title {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.video-desc {
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.4;
+}
+
+/* VIDEO MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-inner {
+  width: 90%;
+  max-width: 900px;
+  aspect-ratio: 16/9;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: -48px;
+  right: 0;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  line-height: 1;
+}
+
+.modal-inner iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+/* MATCH */
+.match {
+  padding: 100px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.match-image {
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  position: relative;
+}
+
+.match-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.match-badge {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: var(--gold);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.match-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 36px 0;
+}
+
+.match-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  font-size: 16px;
+  color: var(--charcoal);
+  line-height: 1.5;
+}
+
+.feat-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--cream);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  border: 1px solid var(--light);
+}
+
+/* TESTIMONIALS */
+.testimonials {
+  background: var(--forest);
+  padding: 100px 40px;
+}
+
+.testimonials-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonials .section-title {
+  color: white;
+}
+
+.testimonials .section-sub {
+  color: rgba(255,255,255,0.6);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.testimonial-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 36px;
+  transition: all 0.3s;
+}
+
+.testimonial-card:hover {
+  border-color: rgba(200,144,42,0.3);
+  background: rgba(255,255,255,0.08);
+}
+
+.stars {
+  color: var(--amber);
+  font-size: 16px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.testimonial-text {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+  color: white;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.author-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.author-name {
+  font-weight: 600;
+  color: white;
+  font-size: 14px;
+}
+
+.author-loc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 2px;
+}
+
+/* FAQ */
+.faq {
+  padding: 100px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-list {
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--light);
+}
+
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 24px 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--forest);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.faq-q:hover { color: var(--sage); }
+
+.faq-icon {
+  font-size: 20px;
+  color: var(--gold);
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-a {
+  display: none;
+  padding-bottom: 24px;
+  color: var(--gray);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.faq-item.open .faq-a {
+  display: block;
+}
+
+/* FORM */
+.form-section {
+  background: var(--cream);
+  padding: 100px 40px;
+}
+
+.form-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.form-left .section-title {
+  margin-bottom: 16px;
+}
+
+.form-promise {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.promise-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--charcoal);
+}
+
+.promise-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--forest);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.form-card {
+  background: white;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  border: 1px solid var(--light);
+}
+
+.form-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--forest);
+  margin-bottom: 28px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--forest);
+  letter-spacing: 0.02em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 16px;
+  border: 1px solid var(--light);
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--charcoal);
+  background: var(--warm-white);
+  transition: border-color 0.2s;
+  outline: none;
+  width: 100%;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--sage);
+  background: white;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-submit {
+  width: 100%;
+  background: var(--forest);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+  margin-top: 8px;
+}
+
+.form-submit:hover {
+  background: var(--moss);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(26,58,42,0.3);
+}
+
+.form-note {
+  text-align: center;
+  font-size: 12px;
+  color: var(--gray);
+  margin-top: 12px;
+}
+
+/* FOOTER */
+footer {
+  background: var(--charcoal);
+  padding: 60px 40px 32px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-brand p {
+  color: rgba(255,255,255,0.5);
+  font-size: 14px;
+  line-height: 1.7;
+  margin-top: 16px;
+  max-width: 280px;
+}
+
+.footer-phone {
+  color: var(--amber);
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  display: block;
+  margin-top: 20px;
+}
+
+.footer-col h4 {
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col ul li a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom p {
+  color: rgba(255,255,255,0.3);
+  font-size: 13px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .paths-grid { grid-template-columns: 1fr; }
+  .how-grid { grid-template-columns: 1fr 1fr; }
+  .videos-grid { grid-template-columns: repeat(3, 1fr); }
+  .rules-inner { grid-template-columns: 1fr; }
+  .match { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .form-inner { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  header { padding: 12px 20px; }
+  nav a:not(.nav-cta):not(.nav-phone) { display: none; }
+  .hero-left { padding: 60px 24px; }
+  .paths, .how, .videos, .match, .faq, .form-section { padding: 60px 20px; }
+  .rules { padding: 60px 20px; }
+  .how-grid { grid-template-columns: 1fr; }
+  .videos-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-trust { flex-wrap: wrap; gap: 16px; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  .proof-bar { gap: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="index-v2.html" class="logo">
+    <div class="logo-icon">🏡</div>
+    <div class="logo-text">
+      Seattle Custom ADU Builders
+      <span>Your Backyard. Your Income.</span>
+    </div>
+  </a>
+  <nav>
+    <a href="#how">How It Works</a>
+    <a href="#videos">Videos</a>
+    <a href="#faq">FAQ</a>
+    <a href="tel:2062587315" class="nav-phone">📞 (206) 258-7315</a>
+    <a href="#assessment" class="nav-cta">Free Assessment</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">Seattle's ADU Specialists — 2025</div>
+    <h1>Your backyard could earn <em>$2,500+</em> a month.</h1>
+    <p class="hero-subhead">Seattle's new rules changed everything.</p>
+    <p>Seattle homeowners are turning unused backyard space into serious rental income — and tiny home dreamers are finding their green acre. We connect you with verified local builders who know Seattle inside and out.</p>
+    <div class="hero-actions">
+      <a href="#assessment" class="btn-primary">Get My Free ADU Assessment →</a>
+      <a href="#how" class="btn-secondary">See How It Works</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item">
+        <div class="trust-number">988+</div>
+        <div class="trust-label">ADU permits issued Seattle 2022</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-number">$150K+</div>
+        <div class="trust-label">Added property value from completed ADU</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-number">2–6wks</div>
+        <div class="trust-label">Permit timeline under 2025 rules</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-number">2 ADUs</div>
+        <div class="trust-label">Now allowed per lot — no owner occupancy</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="iStock-1006605386.jpg" alt="Modern Seattle ADU with orange door">
+    <div class="hero-right-overlay"></div>
+    <div class="hero-stat-card">
+      <div class="stat-item">
+        <div class="stat-val">$2,500+</div>
+        <div class="stat-desc">Monthly rental income potential*</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">3.6%</div>
+        <div class="stat-desc">Seattle vacancy rate — tenants searching</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">$2,195</div>
+        <div class="stat-desc">Median Seattle monthly rent (GPS Renting, Nov 2025)</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">24hrs</div>
+        <div class="stat-desc">Builder match guarantee</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-item"><span class="proof-icon">✓</span> Verified Builder Network</div>
+  <div class="proof-item"><span class="proof-icon">✓</span> Free — No Obligation Assessment</div>
+  <div class="proof-item"><span class="proof-icon">✓</span> Matched Within 24 Hours</div>
+  <div class="proof-item"><span class="proof-icon">✓</span> Fixed Pricing — No Surprises</div>
+  <div class="proof-item"><span class="proof-icon">✓</span> Seattle Permit Experts</div>
+</div>
+
+<!-- PATHS -->
+<section class="paths">
+  <div class="section-label">Which Path Is Yours?</div>
+  <h2 class="section-title">Whether you own a home or dream of your own space —</h2>
+  <p class="section-sub">We have a path for you. Tell us where you are and we'll show you exactly what's possible.</p>
+  <div class="paths-grid">
+    <div class="path-card">
+      <img src="iStock-1807022734.jpg" alt="Seattle neighborhood aerial view" class="path-card-img">
+      <div class="path-card-overlay"></div>
+      <div class="path-card-content">
+        <span class="path-icon">🏠</span>
+        <h3>I Own a Home in Seattle</h3>
+        <p>You have a backyard, a property, and untapped potential. An ADU could generate $2,500+/month in rental income while adding $150,000+ to your property value.</p>
+        <a href="#assessment" class="path-link">Start My ADU Assessment →</a>
+      </div>
+    </div>
+    <div class="path-card">
+      <img src="sanela-arsenic-HcVJqXi1N0g-unsplash (1).jpg" alt="Pacific Northwest backyard cottage" class="path-card-img">
+      <div class="path-card-overlay"></div>
+      <div class="path-card-content">
+        <span class="path-icon">🌲</span>
+        <h3>I'm Looking for My Own Space</h3>
+        <p>You dream of a tiny home, your own land, a simpler life built exactly the way you want it. Smaller. Smarter. More intentional. We see you.</p>
+        <a href="#assessment" class="path-link">Tell Us Your Vision →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RULES -->
+<section class="rules">
+  <div class="rules-inner">
+    <div>
+      <div class="section-label" style="color: var(--amber);">Seattle Changed the Rules in 2025</div>
+      <h2 class="section-title">Now is the best time in Seattle's history to build.</h2>
+      <p class="section-sub">The city removed nearly every barrier that used to make ADU construction difficult.</p>
+      <ul class="rules-list">
+        <li>Two ADUs now allowed per lot</li>
+        <li>No owner-occupancy requirement</li>
+        <li>Height limits raised to 32 feet</li>
+        <li>Permits in as little as 2–6 weeks</li>
+        <li>No parking requirements near transit</li>
+        <li>ADUs can now be sold separately with own title</li>
+      </ul>
+    </div>
+    <div class="rules-image">
+      <img src="iStock-1807022734.jpg" alt="Seattle neighborhood showing ADU potential">
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="section-label">The Process</div>
+  <h2 class="section-title">From backyard idea to rental income.</h2>
+  <p class="section-sub">Four simple steps. We guide you every inch of the way — from your first question to your first rent check.</p>
+  <div class="how-grid">
+    <div class="how-card">
+      <div class="how-number">01</div>
+      <h3>Free Feasibility Review</h3>
+      <p>We analyze your specific lot — its GIS data, zoning overlays, setbacks, and utility maps. You'll know exactly what's possible before spending a dollar.</p>
+      <div class="how-time">⏱ 1–2 weeks</div>
+    </div>
+    <div class="how-card">
+      <div class="how-number">02</div>
+      <h3>Design Your ADU</h3>
+      <p>Working with a licensed Seattle architect, your ADU is designed to maximize rental value, natural light, and neighborhood compatibility.</p>
+      <div class="how-time">⏱ 4–8 weeks</div>
+    </div>
+    <div class="how-card">
+      <div class="how-number">03</div>
+      <h3>City Permits — Handled</h3>
+      <p>Your builder manages the entire Seattle permitting process. Using pre-approved ADUniverse designs, permits can be issued in as little as 2–6 weeks.</p>
+      <div class="how-time">⏱ 2–8 weeks</div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section class="videos" id="videos">
+  <div class="videos-inner">
+    <div class="section-label">Your Complete ADU Education</div>
+    <h2 class="section-title">5 videos. Everything you need to know.</h2>
+    <p class="section-sub">From understanding the opportunity to taking your first step — explained simply and honestly.</p>
+    <div class="videos-grid">
+      <div class="video-card" onclick="openVideo('GMA96RV8MbA')">
+        <img src="https://img.youtube.com/vi/GMA96RV8MbA/maxresdefault.jpg" alt="The Problem">
+        <div class="video-overlay">
+          <div class="video-play">▶</div>
+          <div class="video-num">Video 01</div>
+          <div class="video-title">The Problem</div>
+          <div class="video-desc">What is your backyard actually worth?</div>
+        </div>
+      </div>
+      <div class="video-card" onclick="openVideo('2n_WK7GAIG8')">
+        <img src="https://img.youtube.com/vi/2n_WK7GAIG8/maxresdefault.jpg" alt="The Numbers">
+        <div class="video-overlay">
+          <div class="video-play">▶</div>
+          <div class="video-num">Video 02</div>
+          <div class="video-title">The Numbers</div>
+          <div class="video-desc">$2,500/month. The math that changes everything.</div>
+        </div>
+      </div>
+      <div class="video-card" onclick="openVideo('x994TvE17u8')">
+        <img src="https://img.youtube.com/vi/x994TvE17u8/maxresdefault.jpg" alt="The Fear">
+        <div class="video-overlay">
+          <div class="video-play">▶</div>
+          <div class="video-num">Video 03</div>
+          <div class="video-title">The Fear</div>
+          <div class="video-desc">The four fears — and why none should stop you.</div>
+        </div>
+      </div>
+      <div class="video-card" onclick="openVideo('7LnMNNzPLqk')">
+        <img src="https://img.youtube.com/vi/7LnMNNzPLqk/maxresdefault.jpg" alt="The Builder">
+        <div class="video-overlay">
+          <div class="video-play">▶</div>
+          <div class="video-num">Video 04</div>
+          <div class="video-title">The Builder</div>
+          <div class="video-desc">What to look for in a Seattle ADU builder.</div>
+        </div>
+      </div>
+      <div class="video-card" onclick="openVideo('kLrpVaIlUUI')">
+        <img src="https://img.youtube.com/vi/kLrpVaIlUUI/maxresdefault.jpg" alt="The Decision">
+        <div class="video-overlay">
+          <div class="video-play">▶</div>
+          <div class="video-num">Video 05</div>
+          <div class="video-title">The Decision</div>
+          <div class="video-desc">How to take your first step — right now.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO MODAL -->
+<div class="modal" id="videoModal" onclick="closeVideo(event)">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="closeVideo()">✕</button>
+    <iframe id="videoFrame" src="" allowfullscreen allow="autoplay"></iframe>
+  </div>
+</div>
+
+<!-- MATCH -->
+<section class="match">
+  <div class="match-image">
+    <img src="beth-macdonald-oAtTMmGlu_s-unsplash.jpg" alt="Seattle neighborhood home">
+    <div class="match-badge">✓ Verified Builder Network</div>
+  </div>
+  <div>
+    <div class="section-label">We Match You. You Don't Search.</div>
+    <h2 class="section-title">Finding the right builder is the hardest part. We've done it.</h2>
+    <p style="color: var(--gray); font-size: 17px; line-height: 1.7; margin-bottom: 8px;">We've already done the work — vetting and verifying builders who specialize specifically in Seattle ADU and DADU construction.</p>
+    <ul class="match-features">
+      <li><div class="feat-icon">🔍</div>Builders vetted and verified by our team</li>
+      <li><div class="feat-icon">📋</div>Seattle permit expertise — ADUniverse certified</li>
+      <li><div class="feat-icon">💰</div>Fixed pricing — no surprises, ever</li>
+      <li><div class="feat-icon">⚡</div>Matched within 24 hours of your assessment</li>
+      <li><div class="feat-icon">🤝</div>One dedicated point of contact throughout</li>
+    </ul>
+    <a href="#assessment" class="btn-primary" style="max-width: 320px;">Get Matched With a Builder →</a>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <div class="section-label" style="color: var(--amber);">What Homeowners Say</div>
+    <h2 class="section-title">Real Seattle homeowners. Real results.</h2>
+    <p class="section-sub">From Ballard to Beacon Hill — here's what happens when you get matched with the right builder.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"We were connected with a fantastic builder within 24 hours. Our backyard cottage is now generating $2,200/month. Best decision we ever made."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👩</div>
+          <div>
+            <div class="author-name">Sarah M.</div>
+            <div class="author-loc">Ballard, Seattle</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I had no idea what to expect. The assessment was fast, the builder was professional, and permits came through in 5 weeks. Incredible process."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👨</div>
+          <div>
+            <div class="author-name">David K.</div>
+            <div class="author-loc">Capitol Hill, Seattle</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"As someone dreaming of a tiny home, I didn't know where to start. They pointed me in exactly the right direction. No pressure, just real help."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👩</div>
+          <div>
+            <div class="author-name">Jennifer T.</div>
+            <div class="author-loc">West Seattle</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p style="color: rgba(255,255,255,0.3); font-size: 12px; margin-top: 24px; text-align: center;">* Testimonials represent typical homeowner experiences. Individual results vary based on property, location, and market conditions.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="section-label">Questions & Answers</div>
+  <h2 class="section-title">Questions Seattle Homeowners Ask</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        How much does an ADU cost to build in Seattle?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">In Seattle, expect $250,000–$400,000 for a detached ADU (DADU) depending on size, finishes, and site conditions. Attached ADUs typically run $150,000–$250,000. Our builders provide detailed written estimates before any commitment.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        How much rent can I charge for an ADU in Seattle?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">Seattle ADUs typically rent for $1,800–$3,500/month depending on neighborhood, size, and finish quality. Prime locations can command $2,500/month or more. Source: GPS Renting Seattle Market Report, November 2025; Seattle Real Estate Central DADU Guide 2026.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Do I need to live on the property to build or rent an ADU?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">No — as of 2019, Seattle eliminated the owner-occupancy requirement entirely. You can build, rent, or even move out completely without any impact on your ADU's legal status. This was further confirmed under HB 1337 in 2025.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        How long does the permit process take?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">Under Seattle's 2025 rules, permits using pre-approved ADUniverse plans can be issued in as little as 2–6 weeks. Our builders know exactly which plan sets qualify and how to navigate the SDCI process efficiently.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        What types of ADUs can I build in Seattle?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">Seattle allows several types: Detached ADU (DADU) — a standalone backyard cottage; Attached ADU (AADU) — connected to your main home; Basement conversion ADU; Garage conversion ADU; Over-garage ADU. You can now build two ADUs on the same lot under 2025 rules.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        What about tiny homes and land in the Seattle area?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">For those dreaming of their own small home on their own land — fill out our assessment form and tell us your story. We are building resources specifically for this path and you'll be among the first to know when we launch.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-section" id="assessment">
+  <div class="form-inner">
+    <div class="form-left">
+      <div class="section-label">Free Assessment</div>
+      <h2 class="section-title">Start Your Free Assessment Today</h2>
+      <p style="color: var(--gray); font-size: 16px; line-height: 1.7; margin-bottom: 8px;">Tell us about your property or vision. Our builder will be in touch within 24 hours.</p>
+      <div class="form-promise">
+        <div class="promise-item"><div class="promise-icon">⚡</div>Response within 24 hours</div>
+        <div class="promise-item"><div class="promise-icon">🔒</div>No obligation, no sales pressure</div>
+        <div class="promise-item"><div class="promise-icon">✓</div>Free feasibility analysis included</div>
+        <div class="promise-item"><div class="promise-icon">📚</div>Free ADU guide sent instantly</div>
+      </div>
+    </div>
+    <div class="form-card">
+      <h3>Get Your Free ADU Assessment</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="Richard">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Smith">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="you@email.com">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="(206) 555-0100">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Your Seattle Neighborhood</label>
+        <select>
+          <option value="">Select your neighborhood...</option>
+          <option>Ballard</option>
+          <option>Fremont</option>
+          <option>Green Lake</option>
+          <option>Capitol Hill</option>
+          <option>Queen Anne</option>
+          <option>West Seattle</option>
+          <option>Beacon Hill</option>
+          <option>Columbia City</option>
+          <option>Rainier Valley</option>
+          <option>Northgate</option>
+          <option>Lake City</option>
+          <option>Other Seattle Neighborhood</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>I Am Interested In...</label>
+        <select>
+          <option value="">Select your path...</option>
+          <option>Building a Detached ADU (DADU) — backyard cottage</option>
+          <option>Building an Attached ADU (AADU) — basement or addition</option>
+          <option>Garage or basement conversion ADU</option>
+          <option>Over-garage ADU</option>
+          <option>Finding land for a tiny home</option>
+          <option>Getting a cost estimate first</option>
+          <option>Learning about my options</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Tell Us About Your Project or Vision</label>
+        <textarea placeholder="Share any details about your property, goals, timeline, or questions..."></textarea>
+      </div>
+      <button class="form-submit">Get My Free Assessment →</button>
+      <p class="form-note">No obligation. No sales pressure. We respond within 24 hours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-icon">🏡</div>
+        <div class="logo-text" style="color: white;">
+          Seattle Custom ADU Builders
+          <span>Your Backyard. Your Income.</span>
+        </div>
+      </div>
+      <p>Connecting Seattle homeowners and tiny home dreamers with trusted, verified ADU builders since 2025. A Today's Marketing Strategies LLC property.</p>
+      <a href="tel:2062587315" class="footer-phone">(206) 258-7315</a>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index-v2.html">Home</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="why-build-now.html">Why Build Now</a></li>
+        <li><a href="contact.html">Get Started</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Neighborhoods</h4>
+      <ul>
+        <li><a href="#">Ballard ADU</a></li>
+        <li><a href="#">Capitol Hill ADU</a></li>
+        <li><a href="#">West Seattle ADU</a></li>
+        <li><a href="#">Beacon Hill ADU</a></li>
+        <li><a href="#">Queen Anne ADU</a></li>
+        <li><a href="#">Fremont ADU</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>ADU Types</h4>
+      <ul>
+        <li><a href="#">Detached ADU (DADU)</a></li>
+        <li><a href="#">Attached ADU (AADU)</a></li>
+        <li><a href="#">Garage Conversion</a></li>
+        <li><a href="#">Basement ADU</a></li>
+        <li><a href="#">Tiny Homes</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Seattle Custom ADU Builders. All rights reserved.</p>
+    <p style="font-size: 11px;">*Rental income data: GPS Renting Seattle Market Report Nov 2025; Seattle Real Estate Central DADU Guide 2026. Income varies by property, location, size and market conditions.</p>
+  </div>
+</footer>
+
+<script>
+// FAQ Toggle
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// Video Modal
+function openVideo(id) {
+  document.getElementById('videoModal').classList.add('active');
+  document.getElementById('videoFrame').src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+}
+
+function closeVideo(e) {
+  if (!e || e.target === document.getElementById('videoModal') || e.target.classList.contains('modal-close')) {
+    document.getElementById('videoModal').classList.remove('active');
+    document.getElementById('videoFrame').src = '';
+  }
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>
